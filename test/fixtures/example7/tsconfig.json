@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+    	"views/*": ["generated/templates/views/*"]
+    },
+    "outDir": "dist"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "paths": {
+    	"*": ["generated/templates/*"]
+    },
+    "outDir": "dist"
+  }
+}

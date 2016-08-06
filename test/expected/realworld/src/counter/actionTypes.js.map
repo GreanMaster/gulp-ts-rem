@@ -1,0 +1,1 @@
+{"version":3,"sources":["src/counter/actionTypes.ts"],"names":[],"mappings":";AACa,iBAAS,GAAG,WAAW,CAAC;AACxB,iBAAS,GAAG,WAAW,CAAC","file":"src/counter/actionTypes.js","sourcesContent":["\r\nexport const INCREMENT = 'INCREMENT';\r\nexport const DECREMENT = 'DECREMENT';\r\n"],"sourceRoot":"/source/"}
