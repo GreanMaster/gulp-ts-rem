@@ -4,8 +4,8 @@
   "description": "replace the module path for TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha",
-    "coverage": "istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec"
+    "test": "node ./node_modules/mocha/bin/mocha",
+    "coverage": "node ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec"
   },
   "author": "Jame",
   "license": "MIT ",
@@ -15,6 +15,7 @@
     "eslint": "^3.1.1",
     "eslint-config-standard": "^5.3.5",
     "eslint-plugin-standard": "^2.0.0",
+    "istanbul": "^0.4.4",
     "mocha": "^3.0.1",
     "mocha-lcov-reporter": "^1.2.0"
   },
