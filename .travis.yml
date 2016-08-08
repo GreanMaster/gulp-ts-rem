@@ -3,3 +3,6 @@ node_js:
   - "5"
   - "4"
   - "node"
+after_script:
+- npm run coverage
+- cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage
