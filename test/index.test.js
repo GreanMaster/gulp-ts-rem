@@ -14,7 +14,7 @@ describe('gulp-ts-path-replace', function () {
         path: 'test/fixtures/example1',
         contents: new Buffer('')
       })
-      check = function check (stream, done, callback) {
+      check = function (stream, done, callback) {
         stream.on('data', function (newFile) {
           callback(newFile)
           done()
@@ -23,14 +23,36 @@ describe('gulp-ts-path-replace', function () {
         stream.end()
       }
     })
+    describe('null input', function () {
+      it('should equal null', function (done) {
+        file = new File({
+          path: 'test/fixtures/example1/foo.js',
+          contents: null
+        })
+        var stream = tsPathReplace()
+        check(stream, done, function (newFile) {
+          expect(newFile.isNull()).to.eq(true)
+        })
+      })
+    })
+    describe('streamed input', function () {
+      it('should equal stream', function (done) {
+        file = new File({
+          path: 'test/fixtures/example1/foo.js',
+          contents: fs.createReadStream('test/fixtures/example1/foo.js')
+        })
+        var stream = tsPathReplace()
+        check(stream, done, function (newFile) {
+          expect(newFile.isStream()).to.eq(true)
+        })
+      })
+    })
     describe('buffered input', function () {
-      beforeEach(function () {
+      it('should equal buffer', function (done) {
         file = new File({
           path: 'test/fixtures/example1/foo.js',
           contents: fs.readFileSync('test/fixtures/example1/foo.js')
         })
-      })
-      it('should equal buffer', function (done) {
         var stream = tsPathReplace()
         expect(file.isBuffer()).to.eq(true)
         check(stream, done, function (newFile) {

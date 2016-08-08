@@ -98,7 +98,6 @@ module.exports = function () {
         return callback(null, file)
       }
       if (file.isStream()) {
-        console.log('hello.wrong')
         return callback(null, file)
       }
       if (file.isBuffer()) {
@@ -108,7 +107,6 @@ module.exports = function () {
         file.contents = new Buffer(getRelativePath(file))
         return callback(null, file)
       }
-      return callback(null, file)
     }
   })
 }
