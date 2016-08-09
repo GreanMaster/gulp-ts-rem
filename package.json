@@ -1,7 +1,7 @@
 {
-  "name": "ts-path-replace",
+  "name": "ts-relative-module",
   "version": "0.0.1",
-  "description": "replace the module path for TypeScript",
+  "description": "replace the module path with relative for TypeScript",
   "main": "index.js",
   "scripts": {
     "test": "node ./node_modules/mocha/bin/mocha",
